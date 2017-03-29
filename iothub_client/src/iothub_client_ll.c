@@ -120,6 +120,8 @@ static void device_twin_data_destroy(IOTHUB_DEVICE_TWIN* client_item)
 static int create_blob_upload_module(IOTHUB_CLIENT_LL_HANDLE_DATA* handle_data, const IOTHUB_CLIENT_CONFIG* config)
 {
     int result;
+    (void)handle_data;
+    (void)config;
 #ifndef DONT_USE_UPLOADTOBLOB
     handle_data->uploadToBlobHandle = IoTHubClient_LL_UploadToBlob_Create(config);
     if (handle_data->uploadToBlobHandle == NULL)
@@ -139,6 +141,7 @@ static int create_blob_upload_module(IOTHUB_CLIENT_LL_HANDLE_DATA* handle_data, 
 
 static void destroy_blob_upload_module(IOTHUB_CLIENT_LL_HANDLE_DATA* handle_data)
 {
+    (void)handle_data;
 #ifndef DONT_USE_UPLOADTOBLOB
     /*Codes_SRS_IOTHUBCLIENT_LL_02_046: [ If creating the TICK_COUNTER_HANDLE fails then IoTHubClient_LL_Create shall fail and return NULL. ]*/
     IoTHubClient_LL_UploadToBlob_Destroy(handle_data->uploadToBlobHandle);
