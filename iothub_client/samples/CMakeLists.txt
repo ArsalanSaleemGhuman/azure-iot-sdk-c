@@ -16,7 +16,7 @@ if(${use_http})
     if(NOT ${nucleus} OR (${nucleus} AND ${nucleus_sample_http}))
         add_sample_directory(iothub_client_sample_http)
     endif()
-    if(NOT ${nucleus}
+    if(NOT ${nucleus})
         add_sample_directory(iothub_client_sample_http_shared)
         if(NOT ${dont_use_uploadtoblob})
             add_sample_directory(iothub_client_sample_upload_to_blob)
