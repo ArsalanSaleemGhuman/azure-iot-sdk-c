@@ -17,6 +17,11 @@ set(iothub_client_sample_amqp_h_files
 	iothub_client_sample_amqp.h
 )
 
+if (${nucleus} AND ${nucleus_sample_amqp})
+set(iothub_client_sample_amqp_c_files ${iothub_client_sample_amqp_c_files} ./nucleus/main.c)
+endif()
+
+
 IF(WIN32)
 	#windows needs this define
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS)

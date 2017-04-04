@@ -17,6 +17,10 @@ set(iothub_client_sample_http_h_files
 iothub_client_sample_http.h
 )
 
+if (${nucleus} AND ${nucleus_sample_http})
+set(iothub_client_sample_http_c_files ${iothub_client_sample_http_c_files} ./nucleus/main.c)
+endif()
+
 IF(WIN32)
 	#windows needs this define
 	add_definitions(-D_CRT_SECURE_NO_WARNINGS)

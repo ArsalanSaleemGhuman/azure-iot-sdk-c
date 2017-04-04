@@ -14,17 +14,17 @@ endfunction()
 
 
 
-if(${use_amqp} AND (NOT DEFINED use_amqp_kit OR NOT ${use_amqp_kit}))
+if(${use_amqp} AND (NOT DEFINED use_amqp_kit OR NOT ${use_amqp_kit}) AND (NOT ${nucleus}))
 	add_sample_directory(remote_monitoring)
 	add_sample_directory(simplesample_amqp)
 endif()
 
-if(${use_http} AND (NOT DEFINED use_http_kit OR NOT ${use_http_kit}))
+if(${use_http} AND (NOT DEFINED use_http_kit OR NOT ${use_http_kit}) AND (NOT ${nucleus}))
 	add_sample_directory(simplesample_http)
 	add_sample_directory(temp_sensor_anomaly)
 endif()
 
-if(${use_mqtt} AND (NOT DEFINED use_mqtt_kit OR NOT ${use_mqtt_kit}))
+if(${use_mqtt} AND (NOT DEFINED use_mqtt_kit OR NOT ${use_mqtt_kit}) AND (NOT ${nucleus}))
 	add_sample_directory(simplesample_mqtt)
     add_sample_directory(devicetwin_simplesample)
 endif()
