@@ -5,6 +5,8 @@ Overview:
 Note: Incase you do not have ReadyStart installed required for the system project that contact www.mentor.com
  
 2)Simply run the script 'azure_sdk_script.sh', it will run the cmake utility and the compile the code.
+Note: Run the script 'azure_sdk_script.sh' from the same folder it is placed in. 
+
 3)The http, amqp and mqtt demos will be compiled.
 
 Note:

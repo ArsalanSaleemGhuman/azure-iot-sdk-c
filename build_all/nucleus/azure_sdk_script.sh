@@ -8,7 +8,8 @@ cd $SDK_PATH
 #set clean to 1 if all local changes are to be cleaned.
 clean=0
 
-if [$clean -eq 1];then
+if test $clean -eq 1
+then
     git clean -fd
     git reset --hard
     cd c-utility
