@@ -6,7 +6,7 @@ SDK_PATH=../../
 cd $SDK_PATH
 
 #set clean to 1 if all local changes are to be cleaned.
-clean=1
+clean=0
 
 if test $clean -eq 1
 then
