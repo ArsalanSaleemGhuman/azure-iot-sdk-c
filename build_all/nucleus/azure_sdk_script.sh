@@ -6,7 +6,7 @@ SDK_PATH=../../
 cd $SDK_PATH
 
 #set clean to 1 if all local changes are to be cleaned.
-clean=0
+clean=1
 
 if test $clean -eq 1
 then
@@ -31,9 +31,9 @@ cmake -DCMAKE_TOOLCHAIN_FILE=./build_all/nucleus/toolset_csgnu_arm.cmake -Duse_o
 
 make
 
-#arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http.bin
+arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http iothub_client/samples/iothub_client_sample_http/iothub_client_sample_http.bin
 
-#arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp.bin
+arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp iothub_client/samples/iothub_client_sample_amqp/iothub_client_sample_amqp.bin
 
-#arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt.bin
+arm-none-eabi-objcopy -O binary iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt iothub_client/samples/iothub_client_sample_mqtt/iothub_client_sample_mqtt.bin
 
