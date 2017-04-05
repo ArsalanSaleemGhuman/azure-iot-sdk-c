@@ -33,9 +33,14 @@ string(REGEX MATCH  "toolset=[^/]*" toolset ${toolset})
 string(REGEX MATCH  "([^=]+$)" toolset ${toolset})
 string(REGEX MATCH  "([^\"]+)" toolset ${toolset})
 
+#extract the ld file name
+file(READ ${NUCLEUS_SYS_PROJ}/output/${toolset}/${bsp_name}/Debug/system.properties ld_file)
+string(REGEX MATCH  "LDSCRIPT_VAL = [$][(]TOOLSETS_HOME[)][^\n]*" ld_file ${ld_file})
+string(REGEX MATCH  "([^/]+$)" ld_file ${ld_file})
+
 set (NUCLEUS_LIB "${NUCLEUS_SYS_PROJ}/output/${toolset}/${bsp_name}/Debug/lib/libnucleus.a")
 set (NUCLEUS_LIBRARY "${NUCLEUS_SYS_PROJ}/output/${toolset}/${bsp_name}/Debug/lib")
-set (NUCLEUS_LD_FILE "${NUCLEUS_SYS_PROJ}/output/${toolset}/${bsp_name}/Debug/toolset/${toolset}.${bsp_name}.link_ram.ld")
+set (NUCLEUS_LD_FILE "${NUCLEUS_SYS_PROJ}/output/${toolset}/${bsp_name}/Debug/toolset/${ld_file}")
  
 SET(COMMON_FLAGS "")
 
