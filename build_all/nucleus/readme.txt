@@ -2,7 +2,7 @@ Overview:
 
 
 1)Edit the 'NUCLEUS_SYS_PROJ' variable within the 'toolset_csgnu_arm.cmake' to your system project path.
-Note: Incase you do not have ReadyStart installed required for the system project that contact www.mentor.com
+Note: Incase you do not have ReadyStart installed required for the system project then contact www.mentor.com
  
 2)Simply run the script 'azure_sdk_script.sh', it will run the cmake utility and the compile the code.
 Note: Run the script 'azure_sdk_script.sh' from the same folder it is placed in. 
